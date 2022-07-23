@@ -106,7 +106,7 @@ def groovy(def name) {
     ]
 }
 
-version = '1.0.3'
+version = '1.1.0'
 group = 'net.thesilkminer.mc.austin'
 archivesBaseName = 'austin-powerful-language-provider-keeping-it-groovy-baby'
 
@@ -403,8 +403,16 @@ publishing {
     }
     repositories {
         maven {
-            url = uri("file://${System.getenv("local_maven")}")
+            name = 'ModdingInquisitionMavenRepo'
+            url = 'https://maven.moddinginquisition.org/snapshots'
+            credentials {
+                username = 'username'
+                password = 'password'
+            }
         }
+//        maven {
+//            url = uri("file://${System.getenv("local_maven")}")
+//        }
     }
 }
 
